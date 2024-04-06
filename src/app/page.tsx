@@ -1,6 +1,40 @@
 import Image from "next/image";
+import { api } from "../../Constants";
 
-export default function Home() {
+
+async function getCourses() {
+  const response = await fetch(`${api.url}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      query: `
+      query MyQuery {
+        products {
+          name
+          images{
+            url
+            id
+          }
+        }
+      }
+      
+        `,
+    }),
+  });
+  const json = await response.json();
+
+  
+
+  return json.data.products;
+}
+
+export default async function  Home() {
+
+  const d=await getCourses()
+ 
+  console.log(d)
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
