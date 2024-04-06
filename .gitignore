@@ -13,6 +13,8 @@
 /.next/
 /out/
 
+/Constants
+
 # production
 /build
 
@@ -35,4 +37,3 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-Constants
