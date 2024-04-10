@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main className="mx-auto max-w-screen-xl pb-8 ">
+        <main className="mx-auto max-md:mx-6 max-w-screen-xl pb-8 ">
           <Header />
           {children}
           <Footercomp/>

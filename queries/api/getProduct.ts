@@ -4,6 +4,7 @@ import { productdetail, productquery } from "../hygraphquery/grapqlquery";
 export async function getProducts() {
   const response = await fetch(`${api.url}`, {
     method: "POST",
+    cache:'no-store',
     headers: {
       "Content-Type": "application/json",
     },
@@ -20,6 +21,7 @@ export async function getProductsdetail(slug: any) {
   console.log(slug);
   const response = await fetch(`${api.url}`, {
     method: "POST",
+    cache:'no-store',
     headers: {
       "Content-Type": "application/json",
     },

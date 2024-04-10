@@ -9,7 +9,7 @@ const page = async (props: any) => {
     <>
       {detail?.map((d: any) => (
         <div
-          className="grid grid-cols-2 gap-8 max-md:grid-cols-1 max-md:place-content-center max-md:place-items-center"
+          className="grid grid-cols-2 gap-8 max-md:grid-cols-1  "
           key={d?.id}
         >
           <img
@@ -17,10 +17,10 @@ const page = async (props: any) => {
             className="h-full w-full"
             alt="d;ldld"
           />
-          <div>
+          <div >
             <h1 className="text-3xl  font-bold my-1">{d?.name}</h1>
             <h1 className="text-xl  font-semibold my-1">Rs. {d?.price}</h1>
-            <p className="my-1">{d?.description}</p>
+            <p className="my-1 ">{d?.description}</p>
           </div>
         </div>
       ))}
