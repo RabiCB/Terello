@@ -11,3 +11,13 @@ export const productquery = `query MyQuery {
   }
   
     `;
+
+    export const productdetail=`query MyQuery {
+      products(where: {slug: "unisex-long-sleeve-tee"}) {
+        id
+        name
+        description
+      }
+     
+    }
+    `
