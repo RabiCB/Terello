@@ -29,6 +29,10 @@ export async function getProductsdetail(slug: any) {
           id
           name
           description
+          price
+         images{
+          url
+         }
         }
        
       }
