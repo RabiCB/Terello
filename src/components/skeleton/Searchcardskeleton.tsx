@@ -3,7 +3,7 @@ import { Skeleton } from 'antd';
 
 const Searchcardskeleton = () => {
   return (
-    <Skeleton loading/>
+    <Skeleton />
   )
 }
 
