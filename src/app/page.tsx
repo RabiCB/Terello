@@ -3,31 +3,34 @@ import Image from "next/image";
 import { getProducts } from "../../queries/api/getProduct";
 import Link from "next/link";
 import Imagecarousel from "@/components/Imagecard/Imagecarousel";
+import { Button } from "antd";
+import AddToButton from "@/components/Addtocart/Button";
 
+export default async function Home() {
+  const data = await getProducts();
+  console.log(data.images);
 
+  //typescript intergartion left
 
-export default async function  Home() {
-const data=await getProducts()
-console.log(data.images)
-  
   return (
-    <div className="px-4 sm:px-4 ">
-     
-      <div className="grid grid-cols-3 gap-4 max-md:grid-cols-2">
-        {
-          data?.map((d:any,index:string)=>(
-            <Link href={`/product/${d?.slug}`} className="bg-gray-300 rounded-md relative p-4 flex flex-col items-center cursor-pointer" key={index}>
-             
+    <>
+      <div className="grid  grid-cols-5 gap-6 max-xl:grid-cols-4 max-lg:grid-cols-3  max-md:grid-cols-2 max-sm:grid-cols-1">
+        {data?.map((d: any, index: string) => (
+          <div
+            key={index}
+            className="border-[1px] min-h-[230px] border-gray-300 rounded-[15px] p-4 flex flex-col items-center cursor-pointer"
+          >
+            <Link className="flex flex-col items-center" href={`/product/${d?.slug}`}>
               {/* <img src={d?.images?.[0]?.url} className="w-full h-full"/> */}
-              <Imagecarousel images={d?.images}  />
-           
+              <Imagecarousel images={d?.images} />
+
               <p>{d?.name}</p>
               <p> Rs. {d?.price}</p>
             </Link>
-          ))
-        }
-      
+            <AddToButton data={d} />
+          </div>
+        ))}
       </div>
-    </div>
+    </>
   );
 }

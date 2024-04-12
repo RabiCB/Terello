@@ -5,11 +5,11 @@ export function Footercomp() {
   return (
    
      <Footer className="mt-6 "  container>
-      <FooterCopyright href="#" by="Flowbite™" year={2022} />
+      <FooterCopyright href="#" by="Terello™" year={2024} />
       <FooterLinkGroup>
-        <FooterLink href="#">About</FooterLink>
+        <FooterLink href="#">About Us</FooterLink>
         <FooterLink href="#">Privacy Policy</FooterLink>
-        <FooterLink href="#">Licensing</FooterLink>
+        <FooterLink href="#">Outlets</FooterLink>
         <FooterLink href="#">Contact</FooterLink>
       </FooterLinkGroup>
     </Footer>

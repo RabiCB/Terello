@@ -1,6 +1,7 @@
 export const productquery = `query MyQuery {
     products {
       name
+      id
       price
       slug
       images{

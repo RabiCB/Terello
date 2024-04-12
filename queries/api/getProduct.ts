@@ -4,7 +4,7 @@ import { productdetail, productquery } from "../hygraphquery/grapqlquery";
 export async function getProducts() {
   const response = await fetch(`${api.url}`, {
     method: "POST",
-    cache:'no-store',
+    cache: "no-store",
     headers: {
       "Content-Type": "application/json",
     },
@@ -21,7 +21,7 @@ export async function getProductsdetail(slug: any) {
   console.log(slug);
   const response = await fetch(`${api.url}`, {
     method: "POST",
-    cache:'no-store',
+    cache: "no-store",
     headers: {
       "Content-Type": "application/json",
     },
@@ -42,6 +42,44 @@ export async function getProductsdetail(slug: any) {
     }),
   });
   const json = await response.json();
+
+  return json?.data?.products;
+}
+
+export async function getSearchResults(query: string) {
+
+
+  const response = await fetch(`${api.url}`, {
+    method: "POST",
+    cache: "no-store",
+    next:{
+tags:["search"]
+    },
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      query: `query MyQuery {
+        products(where: {_search: "${query}"}){
+          name
+          id
+          price
+          slug
+          images{
+            url
+
+          }
+        
+        }
+      }
+      
+       
+      
+      `,
+    }),
+  });
+  const json = await response.json();
+  console.log(json);
 
   return json?.data?.products;
 }

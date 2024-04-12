@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 
 
 import gsap from "gsap";
+import { Button } from 'antd';
 
 
 
@@ -17,7 +18,7 @@ interface Iprops{
 
 }[]
 const Imagecarousel = ({images}:Iprops) => {
-    console.log(images)
+   
 
     useGSAP(() => {
         // gsap code here...
@@ -27,7 +28,7 @@ const Imagecarousel = ({images}:Iprops) => {
 
     const [index,setIndex]=useState(0)
 
-    console.log(index)
+    console.log(index,"fkfkf")
 
     useEffect(()=>{
         const timer = setTimeout(() => {
@@ -40,14 +41,18 @@ const Imagecarousel = ({images}:Iprops) => {
     },[images, index])
   return (
    <>
-   <img id="box" src={images?.[index]?.url} className="w-full transition-all ease-in-out duration-150 h-full"/>4
+   <img id="box" src={images?.[index]?.url} className="w-full transition-all ease-in-out duration-150 h-full"/>
    <div className='absolute right-4 bottom-4 flex items-center'>
    {
     images.length>=2 && images?.map((D,i)=>{
-        return <div key={i} className={`bg-white duration-200  h-2 w-2 rounded-full m-1 ease-in-out transition  ${index===i ? 'bg-black':''}`}></div> 
+      let imageindex=i
+      console.log(imageindex===i,"kdkdkeooe")
+      
+        return <div key={i} className={`bg-black duration-200  h-2 w-2 rounded-full m-1 ease-in-out transition  ${index==imageindex && "bg-white"}`}></div> 
       
     })
    }
+  
    </div>
    </>
   )
