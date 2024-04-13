@@ -51,7 +51,7 @@ const Header = () => {
           className="border-[1px] min-h-[36px] text-sm text-gray-600 border-gray-300 rounded-[9px] py-1 px-2 min-w-[260px] outline-none max-md:hidden"
         />
       </div>
-      <div className="inline-flex cursor-pointer items-center">
+      <Link href="/cart" className="inline-flex cursor-pointer items-center">
         <div className="relative">
         <CiShoppingCart size={28} />
         {isMounted &&<span className="absolute top-[-12px] right-[-4px] text-sm text-gray-600">
@@ -60,7 +60,7 @@ const Header = () => {
         </div>
         
        
-      </div>
+      </Link>
     </div>
   );
 };
