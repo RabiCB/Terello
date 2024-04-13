@@ -5,7 +5,17 @@ import Link from "next/link";
 import Imagecarousel from "@/components/Imagecard/Imagecarousel";
 import { Button } from "antd";
 import AddToButton from "@/components/Addtocart/Button";
+import { Metadata } from "next";
 
+
+export const metadata: Metadata = {
+  title:"Terello your shopping site",
+  verification:{
+    google:"XIAahfWG8YRWavFqXIBlRtVhromJbmrAf8bnRmfZIao"
+  },
+  description:"Terello the best shopping site"
+}
+ 
 export default async function Home() {
   const data = await getProducts();
   console.log(data.images);
