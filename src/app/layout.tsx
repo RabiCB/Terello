@@ -18,8 +18,9 @@ export default function RootLayout({
     <html lang="en">
       <CartProvider>
         <body>
+        
           <main className="mx-auto max-md:mx-6 max-w-screen-xl pb-8 ">
-            <Header />
+          <Header />
             <main className="px-4 sm:px-4 ">{children}</main>
            
           </main>
