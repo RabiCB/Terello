@@ -1,10 +1,13 @@
 import React from "react";
 import { getProductsdetail } from "../../../../queries/api/getProduct";
+import Addbutton from "@/components/button/Addbutton";
 
 const page = async (props: any) => {
   const detail = await getProductsdetail(props?.params?.slug);
 
   console.log(detail);
+
+
   return (
     <>
       {detail?.map((d: any) => (
@@ -22,7 +25,8 @@ const page = async (props: any) => {
             <button className="  bg-blue-600 p-2 rounded-full text-white    text-sm font-semibold" >Rs. {d?.price}</button>
             <p className="my-1 ">{d?.description}</p>
             <hr className="my-4"></hr>
-            <button className="bg-blue-600 p-4 w-full text-white rounded-full text-center">Add To Cart</button>
+            {/* <button className="bg-blue-600 p-4 w-full text-white rounded-full text-center">Add To Cart</button> */}
+            <Addbutton d={d}/>
           </div>
         </div>
       ))}
