@@ -46,7 +46,7 @@ const Imagecarousel = ({images}:Iprops) => {
    {
     images.length>=2 && images?.map((D,i)=>{
       let imageindex=i
-      console.log(imageindex===i,"kdkdkeooe")
+     
       
         return <div key={i} className={`bg-black duration-200  h-2 w-2 rounded-full m-1 ease-in-out transition  ${index==imageindex && "bg-white"}`}></div> 
       

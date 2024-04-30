@@ -22,3 +22,15 @@ export const productquery = `query MyQuery {
      
     }
     `
+    export const getTishirts=`query MyQuery {
+      categories(where: {name: "T-Shirts"}) {
+        products {
+          id
+          name
+          images{
+            url
+          }
+        }
+      }
+    }
+    `

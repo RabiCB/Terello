@@ -6,6 +6,7 @@ import Imagecarousel from "@/components/Imagecard/Imagecarousel";
 import { Button } from "antd";
 import AddToButton from "@/components/Addtocart/Button";
 import { Metadata } from "next";
+import { HomeCarousel } from "@/components/Carousel/HomeCarousel";
 
 
 export const metadata: Metadata = {
@@ -24,6 +25,7 @@ export default async function Home() {
 
   return (
     <>
+    <HomeCarousel/>
       <div className="grid  grid-cols-5 gap-6 max-xl:grid-cols-4 max-lg:grid-cols-3  max-md:grid-cols-2 max-sm:grid-cols-1">
         {data?.map((d: any, index: string) => (
           <div

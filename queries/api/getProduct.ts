@@ -1,5 +1,9 @@
 import { api } from "../../Constants";
-import { productdetail, productquery } from "../hygraphquery/grapqlquery";
+import {
+  getTishirts,
+  productdetail,
+  productquery,
+} from "../hygraphquery/grapqlquery";
 
 export async function getProducts() {
   const response = await fetch(`${api.url}`, {
@@ -47,13 +51,11 @@ export async function getProductsdetail(slug: any) {
 }
 
 export async function getSearchResults(query: string) {
-
-
   const response = await fetch(`${api.url}`, {
     method: "POST",
     cache: "no-store",
-    next:{
-tags:["search"]
+    next: {
+      tags: ["search"],
     },
     headers: {
       "Content-Type": "application/json",
@@ -82,4 +84,31 @@ tags:["search"]
   console.log(json);
 
   return json?.data?.products;
+}
+
+export async function getShirts() {
+  const response = await fetch(`${api.url}`, {
+    method: "POST",
+    cache: "no-store",
+    next: {
+      tags: ["search"],
+    },
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      query: `
+        
+        
+      ${getTishirts}
+      
+       
+      
+      `,
+    }),
+  });
+  const json = await response.json();
+  console.log(json);
+
+  return json?.data?.categories;
 }
