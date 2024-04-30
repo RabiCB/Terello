@@ -14,7 +14,7 @@ const page = async (props: any) => {
         >
           <img
             src={d?.images?.[0]?.url}
-            className="h-full w-full "
+            className="max-h-[500px] w-full object-contain "
             alt="d;ldld"
           />
           <div className="pt-4 w-full  h-full" >
