@@ -52,6 +52,7 @@ const Header = () => {
           />
         <Link href="/cart" className="relative">
           <CiShoppingCart size={28} />
+          {isMounted &&<p className="absolute right-0 top-[-12px]">{totalItems}</p>}
           
         </Link>
       </div>

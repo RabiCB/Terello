@@ -6,6 +6,7 @@ import "./globals.css";
 import Header from "@/components/Header/Header";
 import { Footercomp } from "@/components/footer/Footer";
 import { CartProvider } from "react-use-cart";
+import { useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,6 +15,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
+  useEffect(()=>{
+   scrollTo(0,0)
+   
+  },[])
   return (
     <html lang="en">
       <CartProvider>
