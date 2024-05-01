@@ -4,6 +4,7 @@ import { Carousel } from "flowbite-react";
 export function HomeCarousel() {
   return (
     <div className="h-56 sm:h-64 xl:h-80 2xl:h-96 my-6 max-md:my-4">
+   
       <Carousel slideInterval={300} slide={true}>
         <img  src="https://www.meme-arsenal.com/memes/0e311f030ab84d928faa0663c1b6a9bd.jpg" alt="..." />
         <img src="https://cdn.shopify.com/s/files/1/1038/1798/products/T-Shirt-Mockup_8a20ae15-6046-4475-ac6a-9e8b5013b42c.jpg?v=1567970252" alt="..." />

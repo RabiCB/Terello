@@ -26,7 +26,7 @@ const page = async (props: any) => {
             <p className="my-1 ">{d?.description}</p>
             <hr className="my-4"></hr>
             {/* <button className="bg-blue-600 p-4 w-full text-white rounded-full text-center">Add To Cart</button> */}
-            <Addbutton d={d}/>
+            <Addbutton d={d} id={d?.id}/>
           </div>
         </div>
       ))}
