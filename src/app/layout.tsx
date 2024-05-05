@@ -25,15 +25,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <CartProvider>
-        <body>
-        
-          <main className="mx-auto max-md:mx-6 max-w-screen-xl pb-8 ">
+        <body className=" max-w-screen-2xl mx-auto min-h-screen px-4 ">
+  
       
           <Header />
           
-            <main className="px-4 sm:px-4 ">{children}</main>
+          
+           {children}
            
-          </main>
+         
         </body>
       </CartProvider>
     </html>

@@ -30,7 +30,7 @@ const Header = () => {
     }
   };
   return (
-    <div className="px-4   w-full  flex items-center justify-between  min-h-[80px] mb-6 ">
+    <div className="px-4   w-full  flex items-center justify-between  h-[80px]  ">
       <div className="flex items-center justify-start ">
         <Link href={"/"} className="h-[42px] w-[84px] relative">
           <Image alt="terello" src={"/logo/terello.svg"} fill />
